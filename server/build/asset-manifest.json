@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.27f371a5.css",
+    "main.js": "/static/js/main.53b5d997.js",
+    "static/media/science.png": "/static/media/science.a033fb43349fea912ccb.png",
+    "static/media/logo.png": "/static/media/logo.153f99a27aa2a9a86b15.png",
+    "static/media/Urbanist-Italic-VariableFont_wght.ttf": "/static/media/Urbanist-Italic-VariableFont_wght.48110d275f8c25c4b1b6.ttf",
+    "static/media/Urbanist-VariableFont_wght.ttf": "/static/media/Urbanist-VariableFont_wght.0d9e5815d00d394a20a3.ttf",
+    "static/media/banner.jpg": "/static/media/banner.bd080eb3f039daf3698e.jpg",
+    "static/media/children.jpg": "/static/media/children.c373bfc00e082bdfc370.jpg",
+    "index.html": "/index.html",
+    "main.27f371a5.css.map": "/static/css/main.27f371a5.css.map",
+    "main.53b5d997.js.map": "/static/js/main.53b5d997.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27f371a5.css",
+    "static/js/main.53b5d997.js"
+  ]
+}

@@ -1,0 +1,13 @@
+
+POST http://localhost:3003/user/register
+Content-Type: application/json
+
+{
+   "name": "user-02",
+   "email": "user02@gmail.com",
+   "password": "123456"
+}
+
+### REFRESH TOKEN
+POST http://localhost:3003/user/refresh_token
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTg3Y2Y2ODVmNjk0MGQ0NGIyMGZkNCIsImlhdCI6MTY0NDQzMDc2NiwiZXhwIjoxNjQ0NTE3MTY2fQ.cvrFjrhLiWBaNAHCY7qC8vVoBlKsHKZdY19HqG9mS5Q

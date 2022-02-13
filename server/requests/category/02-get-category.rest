@@ -1,0 +1,2 @@
+GET http://localhost:3003/api/products?limit=${page*9}&${category}&${sort}&title[regex]=${search}
+# https://dev.to/nehalahmadkhan/many-to-many-relationship-in-mongodb-nodejs-express-mongoose-4djm

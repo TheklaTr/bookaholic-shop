@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './fonts';
+
+body {
+  font-family: 'Urbanist', Verdana, sans-serif;
+}
+
+.button {
+  @apply text-sm py-1 leading-7 px-4 bg-red-500 text-white transition-colors duration-200 hover:bg-red-600;
+  &.disabled {
+    @apply border-gray-400  text-gray-400 hover:bg-white hover:text-gray-400 cursor-default;
+  }
+}
+
+.button-1 {
+  @apply text-sm py-1 leading-7 px-4 bg-emerald-500 text-white transition-colors duration-200 hover:bg-emerald-600;
+  &.disabled {
+    @apply border-gray-400  text-gray-400 hover:bg-white hover:text-gray-400 cursor-default;
+  }
+}
+
+.title-display {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 75px;
+}

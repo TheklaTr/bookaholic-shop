@@ -1,0 +1,2 @@
+DELETE http://localhost:3003/api/products/6204060111b5ea78d8ac5fc3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWMxY2FmN2MyODNmMGM1MDM5M2RkYyIsImlhdCI6MTY0NDQzMDgxNiwiZXhwIjoxNjQ0NTE3MjE2fQ.gDnhyjjiqweJR6QEp0WW_o7nJs-i0j0sJ8pHTeUPw5k

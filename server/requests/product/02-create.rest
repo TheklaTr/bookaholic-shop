@@ -1,0 +1,16 @@
+POST http://localhost:3003/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWMxY2FmN2MyODNmMGM1MDM5M2RkYyIsImlhdCI6MTY0NDcyMDgwNywiZXhwIjoxNjQ0ODA3MjA3fQ.NcuKUm6IKFzjEibt5KjsMdNl72U50I4l6z0EvLfvhf0
+
+{
+    "product_id": "pr001",
+    "title": "abc",
+    "price": 10,
+    "description": "description",
+    "content": "content",
+    "images": {
+        "public_id": "test/yxgfiz4qftg8zj8mfxc4",
+        "url": "https://res.cloudinary.com/theklatran/image/upload/v1642976253/test/yxgfiz4qftg8zj8mfxc4.png"
+    },
+    "category": "programming"
+}
