@@ -76,7 +76,3 @@ Homepage:
 
 Start Page:
 ![startpage](https://res.cloudinary.com/theklatran/image/upload/v1644780916/test/admin-page_wuqtgn.png)
-
-```
-
-```
