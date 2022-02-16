@@ -45,7 +45,7 @@ const Cart = () => {
     cart.map(
       (item) =>
         item._id === id &&
-        (item.quantity === 1 ? (item.quantity = 1) : (item.quantity -= 1))
+        (item.quantity === 1 ? item.quantity : item.quantity--)
     )
 
     setCart([...cart])

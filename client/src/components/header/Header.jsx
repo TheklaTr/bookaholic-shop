@@ -37,7 +37,7 @@ export default function Header() {
           </a>
         </div>
 
-        <ul className="flex-row gap-10 items-center hidden lg:flex justify-center">
+        <ul className="flex-row gap-10 items-center lg:flex justify-center">
           <li className="py-2">
             <Link to="/" className="hover:text-red-500 flex flex-row">
               <AiOutlineHome className="mr-1 mt-1 text-sm" /> Home
