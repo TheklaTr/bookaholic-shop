@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 
-import Filter from './Filter'
 import { GlobalState } from '../../../GlobalState'
 import LoadMore from './LoadMore'
 import Loading from '../utils/Loading'
 import ProductCard from '../productItem/ProductCard'
 import Search from './Search'
+import SortBy from './SortBy'
 import axios from 'axios'
 
 const Products = () => {
@@ -74,7 +74,7 @@ const Products = () => {
 
       <div className="flex mt-4">
         <div className="w-48">
-          <Filter />
+          <SortBy />
         </div>
 
         <div className="w-full pl-10">

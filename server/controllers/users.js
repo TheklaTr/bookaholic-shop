@@ -1,13 +1,13 @@
-const Users = require('../models/user')
+const User = require('../models/user')
 const bcrypt = require('bcrypt')
-const Payments = require('../models/payment')
+const Payment = require('../models/payment')
 const jwt = require('jsonwebtoken')
 
 const userController = {
   register: async (req, res) => {
     try {
       const { name, email, password } = req.body
-      const user = await Users.findOne({ email })
+      const user = await User.findOne({ email })
 
       if (user) {
         return res
@@ -24,7 +24,7 @@ const userController = {
       // Password Encryption
       const saltRounds = 10
       const passwordHash = await bcrypt.hash(password, saltRounds)
-      const newUser = new Users({ name, email, password: passwordHash })
+      const newUser = new User({ name, email, password: passwordHash })
 
       // Save mongoDB
       await newUser.save()
@@ -52,7 +52,7 @@ const userController = {
     try {
       const { email, password } = req.body
 
-      const user = await Users.findOne({ email })
+      const user = await User.findOne({ email })
       if (!user) return res.status(400).json({ msg: 'User does not exist.' })
 
       const isMatch = await bcrypt.compare(password, user.password)
@@ -104,7 +104,7 @@ const userController = {
   },
   getUser: async (req, res) => {
     try {
-      const user = await Users.findById(req.user.id)
+      const user = await User.findById(req.user.id)
       if (!user) return res.status(400).json({ msg: 'User does not exist' })
       res.json(user)
     } catch (error) {
@@ -113,13 +113,10 @@ const userController = {
   },
   addCart: async (req, res) => {
     try {
-      const user = await Users.findById(req.user.id)
+      const user = await User.findById(req.user.id)
       if (!user) return res.status(400).json({ msg: 'User does not exist.' })
 
-      await Users.findOneAndUpdate(
-        { _id: req.user.id },
-        { cart: req.body.cart }
-      )
+      await User.findOneAndUpdate({ _id: req.user.id }, { cart: req.body.cart })
 
       return res.json({ msg: 'Added to cart' })
     } catch (error) {
@@ -128,7 +125,7 @@ const userController = {
   },
   history: async (req, res) => {
     try {
-      const history = await Payments.find({ user_id: req.user.id })
+      const history = await Payment.find({ user_id: req.user.id })
 
       res.json(history)
     } catch (error) {

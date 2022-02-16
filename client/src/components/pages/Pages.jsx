@@ -9,8 +9,8 @@ import { GlobalState } from '../../GlobalState'
 import Homepage from './homepage/Homepage'
 import Login from './authorization/Login'
 import NotFound from './utils/NotFound'
-import OrderDetails from './history/OrderDetails'
-import OrderHistory from './history/OrderHistory'
+import OrderDetails from './orders/OrderDetails'
+import OrderHistory from './orders/OrderHistory'
 import ProductList from './productList/ProductList'
 import Register from './authorization/Register'
 
@@ -19,7 +19,6 @@ const Pages = () => {
   const [isLogged] = state.useUser.isLogged
   const [isAdmin] = state.useUser.isAdmin
 
-  //! May fix the Route /login && /register
   return (
     <Routes>
       <Route path="/" element={isAdmin ? <ProductList /> : <Homepage />} />

@@ -1,16 +1,16 @@
 const router = require('express').Router()
 const categoryController = require('../controllers/categories')
 const auth = require('../middleware/auth')
-const authAdmin = require('../middleware/authAdmin')
+const adminAuth = require('../middleware/adminAuth')
 
 router
   .route('/category')
   .get(categoryController.getCategories)
-  .post(auth, authAdmin, categoryController.createCategory)
+  .post(auth, adminAuth, categoryController.createCategory)
 
 router
   .route('/category/:id')
-  .delete(auth, authAdmin, categoryController.deleteCategory)
-  .put(auth, authAdmin, categoryController.updateCategory)
+  .delete(auth, adminAuth, categoryController.deleteCategory)
+  .put(auth, adminAuth, categoryController.updateCategory)
 
 module.exports = router

@@ -9,7 +9,6 @@ const useCategories = () => {
   useEffect(() => {
     const getCategories = async () => {
       const res = await axios.get('/api/category')
-      // console.log(res.data.sort((a, b) => a.name.localeCompare(b.name)))
       setCategories(res.data.sort((a, b) => a.name.localeCompare(b.name)))
     }
 

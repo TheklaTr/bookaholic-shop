@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 import { GlobalState } from '../../../GlobalState'
 
-const Filter = () => {
+const SortBy = () => {
   const state = useContext(GlobalState)
   const [categories] = state.useCategories.categories
 
@@ -54,4 +54,4 @@ const Filter = () => {
   )
 }
 
-export default Filter
+export default SortBy

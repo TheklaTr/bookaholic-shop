@@ -1,4 +1,4 @@
-const Products = require('../models/product')
+const Product = require('../models/product')
 
 // Filter, sorting and paginating using queryString
 class APIfeatures {
@@ -7,7 +7,7 @@ class APIfeatures {
     this.queryString = queryString
   }
   filtering() {
-    const queryObj = { ...this.queryString } //queryString = req.query (#8: 7:29)
+    const queryObj = { ...this.queryString } //queryString = req.query
     // console.log({ before: queryObj }) // before delete page
 
     const excludedFields = ['page', 'sort', 'limit']
@@ -55,7 +55,7 @@ const productController = {
   getProducts: async (req, res) => {
     try {
       // console.log(req.query)
-      const features = new APIfeatures(Products.find(), req.query)
+      const features = new APIfeatures(Product.find(), req.query)
         .filtering()
         .sorting()
         .paginating()
@@ -83,11 +83,11 @@ const productController = {
       } = req.body
       if (!images) return res.status(400).json({ msg: 'No image upload' })
 
-      const product = await Products.findOne({ product_id })
+      const product = await Product.findOne({ product_id })
       if (product)
         return res.status(400).json({ msg: 'This product already exists.' })
 
-      const newProduct = new Products({
+      const newProduct = new Product({
         product_id,
         title: title.toLowerCase(),
         price,
@@ -105,7 +105,7 @@ const productController = {
   },
   deleteProduct: async (req, res) => {
     try {
-      const deletedProduct = await Products.findByIdAndDelete(req.params.id)
+      const deletedProduct = await Product.findByIdAndDelete(req.params.id)
       res.json({ msg: `Deleted Product ${deletedProduct}` })
     } catch (error) {
       return res.status(500).json({ msg: error.message })
@@ -116,7 +116,7 @@ const productController = {
       const { title, price, description, content, images, category } = req.body
       if (!images) return res.status(400).json({ msg: 'No image upload' })
 
-      const updatedProduct = await Products.findOneAndUpdate(
+      const updatedProduct = await Product.findOneAndUpdate(
         { _id: req.params.id },
         {
           title: title.toLowerCase(),
