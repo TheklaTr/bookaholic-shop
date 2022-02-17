@@ -9,9 +9,9 @@ import axios from 'axios'
 const initialState = {
   product_id: '',
   title: '',
-  price: 0,
-  description: 'Enter the description',
-  content: 'Enter the content',
+  price: '',
+  description: '',
+  content: '',
   category: '',
   _id: '',
 }
@@ -115,7 +115,7 @@ const CreateProduct = () => {
         await axios.post('/api/products', { ...product, images }, { headers: { Authorization: token } })
       }
       setCallback(!callback)
-      navigate('/')
+      navigate(`/products/${product._id}`)
     } catch (err) {
       alert(err.response.data.msg)
     }
@@ -127,8 +127,8 @@ const CreateProduct = () => {
   return (
     <div className="container">
       <h1 className="text-2xl font-bold">{onEdit ? 'Update Product' : 'Create Product'}</h1>
-      <div className=" grid grid-cols-3 gap-8 mt-8">
-        <div className="upload">
+      <div className="grid grid-cols-3 gap-8 mt-8">
+        <div>
           <label className="self-center w-24">Image</label>
           {!images && <input type="file" name="file" id="file_up" onChange={handleUpload} />}
 
@@ -147,7 +147,7 @@ const CreateProduct = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="col-span-2">
-          <div className="row flex flex-row gap-4 justify-between">
+          <div className="flex flex-row gap-4 justify-between">
             <label htmlFor="product_id" className="self-center w-24">
               Product ID
             </label>
@@ -162,7 +162,7 @@ const CreateProduct = () => {
               className="border border-gray-500 outline-none p-2 ml-4 w-full"
             />
           </div>
-          <div className="row flex flex-row gap-4 justify-between mt-4">
+          <div className="flex flex-row gap-4 justify-between mt-4">
             <label htmlFor="title" className="self-center w-24">
               Title
             </label>
@@ -177,7 +177,7 @@ const CreateProduct = () => {
             />
           </div>
 
-          <div className="row flex flex-row gap-4 justify-between mt-4">
+          <div className="flex flex-row gap-4 justify-between mt-4">
             <label htmlFor="price" className="self-center w-24">
               Price
             </label>
@@ -192,8 +192,8 @@ const CreateProduct = () => {
             />
           </div>
 
-          <div className="row flex flex-row gap-4 justify-between mt-4">
-            <label htmlFor="description" className="w-24">
+          <div className="flex flex-row gap-4 justify-between mt-4">
+            <label htmlFor="description" className="self-center w-24">
               Description
             </label>
             <textarea
@@ -204,12 +204,12 @@ const CreateProduct = () => {
               value={product.description}
               rows="5"
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-3 w-full"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full"
             />
           </div>
 
-          <div className="row flex flex-row gap-4 justify-between mt-4">
-            <label htmlFor="content" className="w-24">
+          <div className="flex flex-row gap-4 justify-between mt-4">
+            <label htmlFor="content" className="self-center w-24">
               Content
             </label>
             <textarea
@@ -224,7 +224,7 @@ const CreateProduct = () => {
             />
           </div>
 
-          <div className="row flex flex-row gap-4 justify-between mt-4">
+          <div className="flex flex-row gap-4 justify-between mt-4">
             <label htmlFor="categories" className="w-24">
               Categories:{' '}
             </label>

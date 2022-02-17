@@ -48,5 +48,11 @@ const productSchema = new mongoose.Schema(
   }
 )
 
+productSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    delete returnedObject.__v
+  },
+})
+
 const Product = mongoose.model('Product', productSchema)
 module.exports = Product

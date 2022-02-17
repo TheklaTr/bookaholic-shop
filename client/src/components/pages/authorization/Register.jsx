@@ -79,8 +79,8 @@ const Register = () => {
             </button>
 
             <p className="link self-center">
+              Already Registered?{' '}
               <Link to="/login">
-                Already Registered?{' '}
                 <button type="submit" className="button-1">
                   Login
                 </button>

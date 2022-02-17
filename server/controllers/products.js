@@ -70,7 +70,7 @@ const productController = {
       if (!images) return res.status(400).json({ msg: 'No image upload' })
 
       const product = await Product.findOne({ product_id })
-      if (product) return res.status(400).json({ msg: 'This product already exists.' })
+      if (product) return res.status(400).json({ msg: `The product "${product.title}" already exists!` })
 
       const newProduct = new Product({
         product_id,

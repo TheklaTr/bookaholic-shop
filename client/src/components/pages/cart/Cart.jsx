@@ -80,32 +80,34 @@ const Cart = () => {
               key={product._id}
             >
               <img src={product.images.url} alt={product.title} width={100} />
-              <div className="">
+              <div className="flex-auto w-60">
                 <h2 className="text-xl font-bold">
                   <Link to={`/products/${product._id}`}>{product.title}</Link>
                 </h2>
                 <p>{product.category}</p>
               </div>
-              <div className="w-full flex flex-row justify-end gap-4">
-                <p className="mt-1 text-xl">€ {(product.price * product.quantity).toFixed(2)}</p>
-                <div className="amount text-xl">
-                  <button onClick={() => decrement(product._id)}>
-                    <AiOutlineMinusCircle />
-                  </button>
-                  <span className="inline-block px-2 align-top -mt-0.5 text-xl">{product.quantity}</span>
-                  <button onClick={() => increment(product._id)}>
-                    <AiOutlinePlusCircle className="align-top" />
-                  </button>
+              <div className="flex flex-col justify-between gap-4">
+                <div className="flex flex-row justify-end gap-4 text-xl">
+                  <div className="amount">
+                    <button onClick={() => decrement(product._id)}>
+                      <AiOutlineMinusCircle />
+                    </button>
+                    <span className="inline-block px-2 align-top -mt-0.5 text-xl">{product.quantity}</span>
+                    <button onClick={() => increment(product._id)}>
+                      <AiOutlinePlusCircle className="align-top" />
+                    </button>
+                  </div>
+                  <div className="delete cursor-pointer" onClick={() => removeProduct(product._id)}>
+                    <AiOutlineDelete />
+                  </div>
                 </div>
-                <div className="delete cursor-pointer" onClick={() => removeProduct(product._id)}>
-                  <AiOutlineDelete className="text-xl" />
-                </div>
+                <p className="text-2xl">€ {(product.price * product.quantity).toFixed(2)}</p>
               </div>
             </div>
           ))}
           <div className="flex flex-row justify-between">
             <p className="text-right text-2xl self-center">
-              <b>Total:</b> €{total.toFixed(2)}
+              <b>Total:</b> € {total.toFixed(2)}
             </p>
             <PaypalButton total={total} tranSuccess={tranSuccess} />
           </div>
