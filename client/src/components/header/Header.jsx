@@ -2,16 +2,24 @@ import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
 
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { BsFillSunFill } from 'react-icons/bs'
 import { FaHistory } from 'react-icons/fa'
+import { GiBookshelf } from 'react-icons/gi'
 import { GlobalState } from '../../GlobalState'
-import { GrUserAdmin } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
-import Logo from './img/logo.png'
+import { MdNightlight } from 'react-icons/md'
 import React from 'react'
+import { RiAdminFill } from 'react-icons/ri'
 import axios from 'axios'
+import useThemeStore from '../../useThemeStore'
+
+// import Logo from './img/logo.png'
 
 export default function Header() {
   const state = React.useContext(GlobalState)
+  const dark = useThemeStore((state) => state.dark)
+  const setDark = useThemeStore((state) => state.setDark)
+
   const [isLogged] = state.useUser.isLogged
   const [isAdmin] = state.useUser.isAdmin
   const [cart] = state.useUser.cart
@@ -29,10 +37,15 @@ export default function Header() {
           <a href="/" className="">
             {isAdmin ? (
               <div className="text-5xl mt-3">
-                <GrUserAdmin />
+                <RiAdminFill />
               </div>
             ) : (
-              <img src={Logo} width={84} height={70} alt="BucTo" />
+              <div className="flex flex-row space-x-1 text-3xl">
+                <div>
+                  <GiBookshelf />
+                </div>
+                <p>BOOKAHOLIC</p>
+              </div>
             )}
           </a>
         </div>
@@ -103,6 +116,9 @@ export default function Header() {
               <AiOutlineShoppingCart />
             </Link>
           )}
+          <button className="h-6" onClick={() => setDark(dark)}>
+            {dark ? <MdNightlight /> : <BsFillSunFill />}
+          </button>
         </div>
       </div>
     </header>

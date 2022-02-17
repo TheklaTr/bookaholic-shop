@@ -14,11 +14,11 @@ const ProductItem = ({ product }) => {
         </a>
       </div>
 
-      <div className="leading-6 border border-gray-200 p-4">
+      <div className="leading-6 border border-gray-200  p-4 dark:border-gray-500">
         <h3 className="font-bold capitalize title-display">
           <Link to={`/products/${product._id}`}>{product.title}</Link>
         </h3>
-        <h3 className="text-sm text-gray-500 mt-1 capitalize">
+        <h3 className=" text-gray-700 dark:text-gray-300 text-sm  mt-1 capitalize">
           <a href="/">{product.category}</a>
         </h3>
         <div className="flex flex-row justify-between mt-4">

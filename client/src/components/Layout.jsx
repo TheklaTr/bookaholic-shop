@@ -4,10 +4,15 @@ import React from 'react'
 
 const Layout = ({ children }) => {
   return (
-    <div className="main">
-      <Header />
-      {children}
-      <Footer />
+    <div className="flex flex-col justify-between min-h-screen main">
+      <div className="flex-none">
+        <Header />
+      </div>
+      <div className="flex-grow">{children}</div>
+
+      <div className="flex-none">
+        <Footer />
+      </div>
     </div>
   )
 }

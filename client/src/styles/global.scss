@@ -22,6 +22,15 @@ body {
   }
 }
 
+.theme {
+  &.dark {
+    @apply text-white bg-gray-700;
+    svg {
+      @apply fill-white stroke-white;
+    }
+  }
+}
+
 .title-display {
   display: -webkit-box;
   -webkit-line-clamp: 3;

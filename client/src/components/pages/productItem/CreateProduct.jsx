@@ -159,7 +159,7 @@ const CreateProduct = () => {
               value={product.product_id}
               onChange={handleChangeInput}
               disabled={onEdit}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
             />
           </div>
           <div className="flex flex-row gap-4 justify-between mt-4">
@@ -173,7 +173,7 @@ const CreateProduct = () => {
               required
               value={product.title}
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
             />
           </div>
 
@@ -188,7 +188,7 @@ const CreateProduct = () => {
               required
               value={product.price}
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
             />
           </div>
 
@@ -204,7 +204,7 @@ const CreateProduct = () => {
               value={product.description}
               rows="5"
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
             />
           </div>
 
@@ -220,7 +220,7 @@ const CreateProduct = () => {
               value={product.content}
               rows="7"
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
             />
           </div>
 
@@ -232,12 +232,12 @@ const CreateProduct = () => {
               name="category"
               value={product.category}
               onChange={handleChangeInput}
-              className="outline-none"
+              className="dark:text-gray-700 outline-none"
             >
               <option value="">Please select a category</option>
               {categories.map((category) => (
                 <option
-                  className="capitalize"
+                  className="dark:text-gray-700 capitalize"
                   value={category.name}
                   // value={category}
                   key={category._id}

@@ -41,7 +41,12 @@
 
 ### Connect to PayPal
 
-- Add paypal clientID sandbox in `client/src/components/pages/cart/PaypalButton.js`
+- Add paypal clientID sandbox in `.env.local`
+
+```
+  REACT_APP_SANDBOX_PAYPAL='YOUR-PAYPAL-SANDBOX-APP-ID'
+
+```
 
 ## Running Project
 

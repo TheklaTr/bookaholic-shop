@@ -4,7 +4,7 @@ import React from 'react'
 
 const ProductCard = ({ product, isAdmin, deleteProduct, handleCheck }) => {
   return (
-    <div className="mt-6 border border-gray-200 mx-2">
+    <div className="mt-6 border border-gray-200 mx-2 dark:border-gray-500">
       {isAdmin && (
         <input
           className="w-4 h-4 my-4 ml-3"
@@ -24,7 +24,7 @@ const ProductCard = ({ product, isAdmin, deleteProduct, handleCheck }) => {
             {product.title}
           </Link>
         </h3>
-        <h3 className="text-sm text-gray-500 mt-1">
+        <h3 className="text-sm  mt-1 dark:text-gray-300">
           <p>{product.category}</p>
         </h3>
         <p className="text-sm mt-2">&euro;{product.price.toFixed(2)}</p>

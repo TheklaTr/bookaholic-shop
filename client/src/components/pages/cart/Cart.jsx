@@ -67,7 +67,7 @@ const Cart = () => {
     alert('You have successfully placed an order.')
   }
 
-  if (cart.length === 0) return <h2 className="mt-6 text-center text-8xl">Cart Empty</h2>
+  if (cart.length === 0) return <h2 className="mt-10 text-center text-8xl">CART EMPTY</h2>
 
   return (
     <div>

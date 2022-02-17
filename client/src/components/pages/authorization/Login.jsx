@@ -40,7 +40,7 @@ const Login = () => {
               placeholder="Email"
               value={user.email}
               onChange={onChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4"
+              className="border border-gray-500 outline-none p-2 ml-4 dark:text-gray-700"
             />
           </p>
           <p className="flex flex-row justify-between mt-6">
@@ -56,7 +56,7 @@ const Login = () => {
               placeholder="Password"
               value={user.password}
               onChange={onChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4"
+              className="border border-gray-500 outline-none p-2 ml-4 dark:text-gray-700"
             />
           </p>
           <div className="flex flex-row justify-between mt-6">

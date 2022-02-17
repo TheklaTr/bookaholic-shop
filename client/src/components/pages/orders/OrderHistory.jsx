@@ -33,7 +33,7 @@ const OrderHistory = () => {
       <h4 className="mt-4">You have {history.length} orders</h4>
       <table className="w-full mt-4">
         <thead>
-          <tr className="bg-gray-700 text-white border border-gray-700">
+          <tr className="bg-gray-700  text-white border border-gray-700 dark:bg-gray-300 dark:text-gray-700">
             <th className="p-2 text-center">No.</th>
             <th className="p-2 text-center">Payment ID</th>
             <th className="p-2 text-center">Date of Purchased</th>

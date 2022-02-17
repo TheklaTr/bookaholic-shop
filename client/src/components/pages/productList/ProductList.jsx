@@ -103,8 +103,8 @@ const Products = () => {
         </div>
       </div>
 
-      {/* {products.length === 0 && <Loading />} */}
-      {products.length === 0 && <div className="text-center text-7xl">No product!</div>}
+      {products.length === 0 && <Loading />}
+      {/* {products.length === 0 && <div className="text-center text-7xl">No product!</div>} */}
     </div>
   )
 }

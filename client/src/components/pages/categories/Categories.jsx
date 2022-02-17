@@ -72,7 +72,7 @@ const Categories = () => {
             value={category}
             required
             onChange={(e) => setCategory(e.target.value)}
-            className="border border-gray-500 outline-none p-2 ml-4 w-full"
+            className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
           />
           <button type="submit" className="text-2xl ml-4 self-center">
             {onEdit ? <MdOutlineSystemUpdateAlt /> : <MdOutlineCreateNewFolder />}
