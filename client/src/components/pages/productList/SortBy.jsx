@@ -17,19 +17,10 @@ const SortBy = () => {
     <div className="filter_menu text-sm">
       <div className="row">
         <span>Filter: </span>
-        <select
-          className="mt-4 outline-none"
-          name="category"
-          value={category}
-          onChange={handleCategory}
-        >
+        <select className="mt-4 outline-none" name="category" value={category} onChange={handleCategory}>
           <option value="">All Products</option>
           {categories.map((category) => (
-            <option
-              className="capitalize"
-              value={'category=' + category.name}
-              key={category._id}
-            >
+            <option className="capitalize" value={'category=' + category.name} key={category._id}>
               {category.name}
             </option>
           ))}
@@ -38,11 +29,7 @@ const SortBy = () => {
 
       <div className="row sort mt-4">
         <span>Sort: </span>
-        <select
-          value={sort}
-          onChange={(e) => setSort(e.target.value)}
-          className="outline-none"
-        >
+        <select value={sort} onChange={(e) => setSort(e.target.value)} className="outline-none">
           <option value="">Newest</option>
           <option value="sort=oldest">Oldest</option>
           <option value="sort=-sold">Best sales</option>

@@ -1,8 +1,5 @@
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
-import {
-  MdOutlineCreateNewFolder,
-  MdOutlineSystemUpdateAlt,
-} from 'react-icons/md'
+import { MdOutlineCreateNewFolder, MdOutlineSystemUpdateAlt } from 'react-icons/md'
 import React, { useContext, useState } from 'react'
 
 import { GlobalState } from '../../../GlobalState'
@@ -24,20 +21,12 @@ const Categories = () => {
 
       if (onEdit) {
         if (window.confirm('Do you want to edit this category?')) {
-          const res = await axios.put(
-            `/api/category/${id}`,
-            { name: category },
-            config
-          )
+          const res = await axios.put(`/api/category/${id}`, { name: category }, config)
           alert(res.data.msg)
         }
       } else {
         if (window.confirm('Do you want to create this category?')) {
-          const res = await axios.post(
-            '/api/category',
-            { name: category },
-            config
-          )
+          const res = await axios.post('/api/category', { name: category }, config)
           alert(res.data.msg)
         }
       }
@@ -86,11 +75,7 @@ const Categories = () => {
             className="border border-gray-500 outline-none p-2 ml-4 w-full"
           />
           <button type="submit" className="text-2xl ml-4 self-center">
-            {onEdit ? (
-              <MdOutlineSystemUpdateAlt />
-            ) : (
-              <MdOutlineCreateNewFolder />
-            )}
+            {onEdit ? <MdOutlineSystemUpdateAlt /> : <MdOutlineCreateNewFolder />}
           </button>
         </div>
       </form>

@@ -47,18 +47,12 @@ export default function Header() {
           {isAdmin && (
             <>
               <li className="py-2">
-                <Link
-                  className="hover:text-red-500 flex flex-row"
-                  to="/create_product"
-                >
+                <Link className="hover:text-red-500 flex flex-row" to="/create_product">
                   Create Product
                 </Link>
               </li>
               <li className="py-2">
-                <Link
-                  className="hover:text-red-500 flex flex-row"
-                  to="/category"
-                >
+                <Link className="hover:text-red-500 flex flex-row" to="/category">
                   Categories
                 </Link>
               </li>

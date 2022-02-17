@@ -16,10 +16,7 @@ class APIfeatures {
 
     let queryStr = JSON.stringify(queryObj)
 
-    queryStr = queryStr.replace(
-      /\b(gte|gt|lt|lte|regex)\b/g,
-      (match) => '$' + match
-    )
+    queryStr = queryStr.replace(/\b(gte|gt|lt|lte|regex)\b/g, (match) => '$' + match)
     // console.log({ queryObj, queryStr })
     /**
      * * gte = greater than or equal
@@ -55,10 +52,7 @@ const productController = {
   getProducts: async (req, res) => {
     try {
       // console.log(req.query)
-      const features = new APIfeatures(Product.find(), req.query)
-        .filtering()
-        .sorting()
-        .paginating()
+      const features = new APIfeatures(Product.find(), req.query).filtering().sorting().paginating()
       const products = await features.query
 
       res.json({
@@ -72,20 +66,11 @@ const productController = {
   },
   createProduct: async (req, res) => {
     try {
-      const {
-        product_id,
-        title,
-        price,
-        description,
-        content,
-        images,
-        category,
-      } = req.body
+      const { product_id, title, price, description, content, images, category } = req.body
       if (!images) return res.status(400).json({ msg: 'No image upload' })
 
       const product = await Product.findOne({ product_id })
-      if (product)
-        return res.status(400).json({ msg: 'This product already exists.' })
+      if (product) return res.status(400).json({ msg: 'This product already exists.' })
 
       const newProduct = new Product({
         product_id,

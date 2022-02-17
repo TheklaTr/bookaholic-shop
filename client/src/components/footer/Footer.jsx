@@ -30,9 +30,9 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="font-bold text-2xl text-white">Authors</h3>
-          </div>
+          </div> */}
           <div>
             <h3 className="font-bold text-2xl text-white">About</h3>
             <ul>

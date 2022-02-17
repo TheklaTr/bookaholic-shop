@@ -32,19 +32,13 @@ const OrderDetails = () => {
         </thead>
         <tbody>
           <tr className="bg-gray-500 text-white odd:bg-white odd:text-gray-700">
-            <td className="p-2 text-center border border-gray-500">
-              {orderDetails.address.recipient_name}
-            </td>
+            <td className="p-2 text-center border border-gray-500">{orderDetails.address.recipient_name}</td>
             <td className="p-2 text-center border border-gray-500">
               {' '}
               {orderDetails.address.line1 + ' - ' + orderDetails.address.city}
             </td>
-            <td className="p-2 text-center border border-gray-500">
-              {orderDetails.address.postal_code}
-            </td>
-            <td className="p-2 text-center border border-gray-500">
-              {orderDetails.address.country_code}
-            </td>
+            <td className="p-2 text-center border border-gray-500">{orderDetails.address.postal_code}</td>
+            <td className="p-2 text-center border border-gray-500">{orderDetails.address.country_code}</td>
           </tr>
         </tbody>
       </table>
@@ -60,19 +54,12 @@ const OrderDetails = () => {
         </thead>
         <tbody>
           {orderDetails.cart.map((item) => (
-            <tr
-              className="bg-gray-500 text-white odd:bg-white odd:text-gray-700"
-              key={item._id}
-            >
+            <tr className="bg-gray-500 text-white odd:bg-white odd:text-gray-700" key={item._id}>
               <td className="p-2 text-center border border-gray-500">
                 <img src={item.images.url} width={100} alt={item.title} />
               </td>
-              <td className="p-2 text-center border border-gray-500 capitalize">
-                {item.title}
-              </td>
-              <td className="p-2 text-center border border-gray-500">
-                {item.quantity}
-              </td>
+              <td className="p-2 text-center border border-gray-500 capitalize">{item.title}</td>
+              <td className="p-2 text-center border border-gray-500">{item.quantity}</td>
               <td className="p-2 text-center border border-gray-500">
                 {(item.price * item.quantity).toFixed(2)}
               </td>

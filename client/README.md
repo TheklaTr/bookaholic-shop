@@ -68,3 +68,118 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- ```
+.
+├── build/
+├── dist/
+│   └──  output.css
+├── node_modules/
+├── public/
+│   ├── fonts/
+│   │   │── Urbanist-Italic-VariableFont_wght.ttf
+│   │   └── Urbanist-VariableFont_wght.ttf
+│   ├── index.html
+│   └── logo.png
+├── src/
+│   ├── components/
+│   │  	├── footer/
+│   │  	│     └── Footer.jsx
+│   │	├── header/
+│   │   │   ├── img
+│   │	│   │     └── logo.png
+│   │	│ 	└── Header.jsx
+│   │	├── main/
+│   │   │  	├── img
+│   │	│   │  	  └── banner.png
+│   │   │ 	├── Banner.jsx
+│   │   │ 	├── ProductItem.jsx
+│   │	│ 	└── ProductList.jsx
+│   │   ├── pages/
+│   │   │   ├── authorization/
+│   │	│ 	│	  	├── Login.jsx
+│   │	│ 	│   	└── Register.jsx
+│   │	│ 	├── cart/
+│   │	│ 	│  	  	├── Cart.jsx
+│   │	│ 	│     	└── PaypalButton.jsx
+│   │	│   ├── categories/
+│   │	│ 	│     	└── Categories.jsx
+│   │   │ 	├── homepage/
+│   │	│ 	│   	├── img
+│   │	│ 	│     	│  	├── children.png
+│   │	│ 	│     	│	└── science.png
+│   │	│ 	│   	└── Homepage.jsx
+│   │	│ 	├── orders/
+│   │	│ 	│ 	  	├── OrderDetails.jsx
+│   │	│ 	│ 	  	└── OrderHistory.jsx
+│   │   │ 	├── productItem/
+│   │	│ 	│   	├── BtnRender.jsx
+│   │	│ 	│     	├── CreateProduct.jsx
+│   │	│ 	│   	├── DetailProduct.jsx
+│   │	│ 	│ 	  	└── ProductCard.jsx
+│   │   │ 	├── productList/
+│   │	│ 	│   	├── LoadMore.jsx
+│   │	│ 	│ 	  	├── ProductList.jsx
+│   │	│	│  	  	├── Search.jsx
+│   │	│ 	│     	└── SortBy.jsx
+│   │	│	├── utils/
+│   │	│ 	│	  	├── Loading.jsx
+│   │	│ 	│		└── NotFound.jsx
+│   │   │  	└── Layout.jsx
+│   ├── hooks/
+│   │  	├── useCategories.js
+│   │  	├── useProducts.js
+│   │  	└── useUser.js
+│   ├── styles/
+│   │   	├── fonts.scss
+│   │   	└── global.scss
+│   ├── App.jsx
+│   ├── GlobalState.js
+│   └── index.js
+├── .gitignore
+├── .prettierignore
+├── .prettierrc.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js
+
+```
+
+```
+.
+├── build/
+├── controllers/
+│   ├── categories.js
+│   ├── payment.js
+│   ├── products.js
+│   └── users.js
+├── middlware/
+│   ├── adminAuth.js
+│   └── auth.js
+├── models/
+│   ├── category.js
+│   ├── payment.js
+│   ├── product.js
+│   └── user.js
+├── node_modules/
+├── requests/
+├── routes/
+│   ├── categoryRouter.js
+│   ├── paymentRouter.js
+│   ├── productRouter.js
+│   ├── upload.js
+│   └── usersRouter.js
+├── tmp/
+├── .env
+├── .eslintignore
+├── .eslintrc.js
+├── .gitignore
+├── .prettierignore
+├── .prettierrc.js
+├── package-lock.json
+├── package.json
+├── Procfile
+└── server.js
+``` -->

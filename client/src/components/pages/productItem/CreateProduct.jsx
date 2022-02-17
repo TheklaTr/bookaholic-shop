@@ -86,11 +86,7 @@ const CreateProduct = () => {
     try {
       if (!isAdmin) return alert("You're not an admin")
       setLoading(true)
-      await axios.post(
-        '/api/destroy',
-        { public_id: images.public_id },
-        { headers: { Authorization: token } }
-      )
+      await axios.post('/api/destroy', { public_id: images.public_id }, { headers: { Authorization: token } })
       setLoading(false)
       setImages(false)
     } catch (err) {
@@ -116,11 +112,7 @@ const CreateProduct = () => {
           { headers: { Authorization: token } }
         )
       } else {
-        await axios.post(
-          '/api/products',
-          { ...product, images },
-          { headers: { Authorization: token } }
-        )
+        await axios.post('/api/products', { ...product, images }, { headers: { Authorization: token } })
       }
       setCallback(!callback)
       navigate('/')
@@ -134,20 +126,11 @@ const CreateProduct = () => {
   }
   return (
     <div className="container">
-      <h1 className="text-2xl font-bold">
-        {onEdit ? 'Update Product' : 'Create Product'}
-      </h1>
+      <h1 className="text-2xl font-bold">{onEdit ? 'Update Product' : 'Create Product'}</h1>
       <div className=" grid grid-cols-3 gap-8 mt-8">
         <div className="upload">
           <label className="self-center w-24">Image</label>
-          {!images && (
-            <input
-              type="file"
-              name="file"
-              id="file_up"
-              onChange={handleUpload}
-            />
-          )}
+          {!images && <input type="file" name="file" id="file_up" onChange={handleUpload} />}
 
           {loading ? (
             <div id="file_img">
@@ -156,10 +139,7 @@ const CreateProduct = () => {
           ) : (
             <div id="file_img" className="relative mt-4" style={styleUpload}>
               <img src={images ? images.url : ''} alt="" />
-              <span
-                onClick={handleDestroy}
-                className="absolute top-0 right-0 text-4xl text-red-500"
-              >
+              <span onClick={handleDestroy} className="absolute top-0 right-0 text-4xl text-red-500">
                 <TiDelete />
               </span>
             </div>

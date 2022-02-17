@@ -51,11 +51,7 @@ const Products = () => {
 
   const deleteAll = () => {
     if (window.confirm('Are you sure you want to delete all products?')) {
-      products.map(
-        (product) =>
-          product.checked &&
-          deleteProduct(product._id, product.images.public_id)
-      )
+      products.map((product) => product.checked && deleteProduct(product._id, product.images.public_id))
     }
   }
 
@@ -108,9 +104,7 @@ const Products = () => {
       </div>
 
       {/* {products.length === 0 && <Loading />} */}
-      {products.length === 0 && (
-        <div className="text-center text-7xl">No product!</div>
-      )}
+      {products.length === 0 && <div className="text-center text-7xl">No product!</div>}
     </div>
   )
 }

@@ -27,32 +27,14 @@ const Pages = () => {
       <Route path="/products/:id" element={<DetailProduct />} />
 
       <Route path="/login" element={isLogged ? <NotFound /> : <Login />} />
-      <Route
-        path="/register"
-        element={isLogged ? <NotFound /> : <Register />}
-      />
+      <Route path="/register" element={isLogged ? <NotFound /> : <Register />} />
 
-      <Route
-        path="/category"
-        element={isAdmin ? <Categories /> : <NotFound />}
-      />
-      <Route
-        path="/create_product"
-        element={isAdmin ? <CreateProduct /> : <NotFound />}
-      />
-      <Route
-        path="/edit_product/:id"
-        element={isAdmin ? <CreateProduct /> : <NotFound />}
-      />
+      <Route path="/category" element={isAdmin ? <Categories /> : <NotFound />} />
+      <Route path="/create_product" element={isAdmin ? <CreateProduct /> : <NotFound />} />
+      <Route path="/edit_product/:id" element={isAdmin ? <CreateProduct /> : <NotFound />} />
 
-      <Route
-        path="/orders"
-        element={isLogged ? <OrderHistory /> : <NotFound />}
-      />
-      <Route
-        path="/orders/:id"
-        element={isLogged ? <OrderDetails /> : <NotFound />}
-      />
+      <Route path="/orders" element={isLogged ? <OrderHistory /> : <NotFound />} />
+      <Route path="/orders/:id" element={isLogged ? <OrderDetails /> : <NotFound />} />
 
       <Route path="/cart" element={isAdmin ? <NotFound /> : <Cart />} />
 

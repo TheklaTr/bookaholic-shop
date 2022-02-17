@@ -1,5 +1,8 @@
+const config = require('./utils/config')
 require('dotenv').config()
 const express = require('express')
+const logger = require('./utils/logger')
+const errorHandler = require('./middleware/errorHandler')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const fileUpload = require('express-fileupload')
@@ -15,31 +18,23 @@ app.use(fileUpload({ useTempFiles: true }))
 // Routes
 app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/categoryRouter'))
-app.use('/api', require('./routes/upload'))
+app.use('/api', require('./routes/imageRouter'))
 app.use('/api', require('./routes/productRouter'))
 app.use('/api', require('./routes/paymentRouter'))
+app.use(errorHandler)
 
-// Connect to mongodb
-const URI = process.env.MONGODB_URL
-mongoose.connect(
-  URI,
-  {
+mongoose
+  .connect(config.MONGODB_URI, {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  },
-  (err) => {
-    if (err) throw err
-    console.log('Connected to MongoDB')
-  }
-)
+  })
+  .then(() => {
+    logger.info('connected to MongoDB')
+  })
+  .catch((error) => {
+    logger.error('error connection to MongoDB:', error.message)
+  })
 
-app.get('/', (req, res) => {
-  return res.json({ message: 'Running...' })
-})
-
-const PORT = process.env.PORT || 3003
-app.listen(PORT, () => {
-  console.log('Server is running on port', PORT)
-})
+module.exports = app

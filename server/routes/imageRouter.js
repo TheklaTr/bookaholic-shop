@@ -28,7 +28,7 @@ router.post('/upload', auth, adminAuth, (req, res) => {
       removeTmp(file.tempFilePath)
       return res.status(400).json({ msg: 'File format is incorrect.' })
     }
-    console.log(file.name)
+    // console.log(file.name)
 
     cloudinary.v2.uploader.upload(
       file.tempFilePath,

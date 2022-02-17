@@ -14,11 +14,7 @@ const useProducts = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      const res = await axios.get(
-        `/api/products?limit=${
-          page * 8
-        }&${category}&${sort}&title[regex]=${search}`
-      )
+      const res = await axios.get(`/api/products?limit=${page * 8}&${category}&${sort}&title[regex]=${search}`)
       const bestSeller = await axios.get('/api/products?sort=-sold')
 
       setProducts(res.data.products)

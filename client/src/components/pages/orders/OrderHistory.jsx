@@ -42,16 +42,9 @@ const OrderHistory = () => {
         </thead>
         <tbody>
           {history.map((items, index) => (
-            <tr
-              key={items._id}
-              className="bg-gray-500 text-white odd:bg-white odd:text-gray-700"
-            >
-              <td className="p-2 text-center border border-gray-500">
-                {index + 1}
-              </td>
-              <td className="p-2 text-center border border-gray-500">
-                {items.paymentID}
-              </td>
+            <tr key={items._id} className="bg-gray-500 text-white odd:bg-white odd:text-gray-700">
+              <td className="p-2 text-center border border-gray-500">{index + 1}</td>
+              <td className="p-2 text-center border border-gray-500">{items.paymentID}</td>
               <td className="p-2 text-center border border-gray-500">
                 {new Date(items.createdAt).toLocaleDateString()}
               </td>

@@ -1,8 +1,4 @@
-import {
-  AiOutlineDelete,
-  AiOutlineMinusCircle,
-  AiOutlinePlusCircle,
-} from 'react-icons/ai'
+import { AiOutlineDelete, AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
 import React, { useContext, useEffect, useState } from 'react'
 
 import { GlobalState } from '../../../GlobalState'
@@ -18,10 +14,7 @@ const Cart = () => {
 
   useEffect(() => {
     const getTotal = () => {
-      const total = cart.reduce(
-        (prev, item) => prev + item.price * item.quantity,
-        0
-      )
+      const total = cart.reduce((prev, item) => prev + item.price * item.quantity, 0)
 
       setTotal(total)
     }
@@ -42,11 +35,7 @@ const Cart = () => {
   }
 
   const decrement = (id) => {
-    cart.map(
-      (item) =>
-        item._id === id &&
-        (item.quantity === 1 ? item.quantity : item.quantity--)
-    )
+    cart.map((item) => item._id === id && (item.quantity === 1 ? item.quantity : item.quantity--))
 
     setCart([...cart])
     addToCart(cart)
@@ -78,8 +67,7 @@ const Cart = () => {
     alert('You have successfully placed an order.')
   }
 
-  if (cart.length === 0)
-    return <h2 className="mt-6 text-center text-8xl">Cart Empty</h2>
+  if (cart.length === 0) return <h2 className="mt-6 text-center text-8xl">Cart Empty</h2>
 
   return (
     <div>
@@ -99,24 +87,17 @@ const Cart = () => {
                 <p>{product.category}</p>
               </div>
               <div className="w-full flex flex-row justify-end gap-4">
-                <p className="mt-1 text-xl">
-                  € {(product.price * product.quantity).toFixed(2)}
-                </p>
+                <p className="mt-1 text-xl">€ {(product.price * product.quantity).toFixed(2)}</p>
                 <div className="amount text-xl">
                   <button onClick={() => decrement(product._id)}>
                     <AiOutlineMinusCircle />
                   </button>
-                  <span className="inline-block px-2 align-top -mt-0.5 text-xl">
-                    {product.quantity}
-                  </span>
+                  <span className="inline-block px-2 align-top -mt-0.5 text-xl">{product.quantity}</span>
                   <button onClick={() => increment(product._id)}>
                     <AiOutlinePlusCircle className="align-top" />
                   </button>
                 </div>
-                <div
-                  className="delete cursor-pointer"
-                  onClick={() => removeProduct(product._id)}
-                >
+                <div className="delete cursor-pointer" onClick={() => removeProduct(product._id)}>
                   <AiOutlineDelete className="text-xl" />
                 </div>
               </div>

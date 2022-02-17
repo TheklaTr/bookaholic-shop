@@ -10,15 +10,11 @@ const userController = {
       const user = await User.findOne({ email })
 
       if (user) {
-        return res
-          .status(400)
-          .json({ msg: 'The email address is already registered' })
+        return res.status(400).json({ msg: 'The email address is already registered' })
       }
 
       if (password.length < 6) {
-        return res
-          .status(400)
-          .json({ msg: 'Password is at least 6 characters long' })
+        return res.status(400).json({ msg: 'Password is at least 6 characters long' })
       }
 
       // Password Encryption

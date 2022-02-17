@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
+    "dev": "nodemon index.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prettier:format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",

@@ -37,11 +37,7 @@ const useUser = (token) => {
       setCart([...cart, { ...product, quantity: 1 }])
 
       const config = { headers: { Authorization: token } }
-      await axios.patch(
-        '/user/add_cart',
-        { cart: [...cart, { ...product, quantity: 1 }] },
-        config
-      )
+      await axios.patch('/user/add_cart', { cart: [...cart, { ...product, quantity: 1 }] }, config)
     } else {
       alert('This product has been added to cart.')
     }

@@ -20,28 +20,16 @@ const BtnRender = ({ product, deleteProduct }) => {
           >
             Delete
           </Link>
-          <Link
-            className="button-1 w-1/2 inline-block"
-            id="btn_view"
-            to={`/edit_product/${product._id}`}
-          >
+          <Link className="button-1 w-1/2 inline-block" id="btn_view" to={`/edit_product/${product._id}`}>
             Edit
           </Link>
         </div>
       ) : (
         <div className="tracking-wide text-white text-center font-semibold gap-2 flex flex-row">
-          <Link
-            className="button w-1/2 inline-block"
-            to="#!"
-            onClick={() => addCart(product)}
-          >
+          <Link className="button w-1/2 inline-block" to="#!" onClick={() => addCart(product)}>
             Buy
           </Link>
-          <Link
-            className="button-1 w-1/2 inline-block"
-            id="btn_view"
-            to={`/products/${product._id}`}
-          >
+          <Link className="button-1 w-1/2 inline-block" id="btn_view" to={`/products/${product._id}`}>
             View
           </Link>
         </div>

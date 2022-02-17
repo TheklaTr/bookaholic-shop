@@ -15,11 +15,7 @@ const ProductCard = ({ product, isAdmin, deleteProduct, handleCheck }) => {
       )}
       <div className="text-center relative">
         <Link to={`/products/${product._id}`} className="align-top">
-          <img
-            src={product.images.url}
-            alt={product.title}
-            className="w-full"
-          />
+          <img src={product.images.url} alt={product.title} className="w-full" />
         </Link>
       </div>
       <div className="leading-6 p-4 capitalize">
