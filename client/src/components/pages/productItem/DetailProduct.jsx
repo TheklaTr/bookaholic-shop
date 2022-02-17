@@ -25,10 +25,12 @@ const DetailProduct = () => {
 
   return (
     <div className="container ">
-      <div className="detail flex flex-row gap-8">
-        <img src={detailProduct.images.url} alt={detailProduct.title} className="w-1/2" />
-        <div className="box-detail w-1/2">
-          <div className="row">
+      <div className="flex flex-row gap-8">
+        <div className="w-1/2">
+          <img src={detailProduct.images.url} alt={detailProduct.title} />
+        </div>
+        <div className="w-1/2">
+          <div>
             <h1 className="text-4xl font-bold uppercase">{detailProduct.title}</h1>
           </div>
           <p className="mt-4 capitalize">Category: {detailProduct.category}</p>
@@ -39,7 +41,7 @@ const DetailProduct = () => {
             <span className="text-2xl text-right">Price: € {detailProduct.price.toFixed(2)}</span>
           </div>
           <p className="text-2xl flex flex-row justify-between mt-4">
-            <button className="button-1 ">
+            <button className="button-1">
               <Link to="/products">BACK</Link>
             </button>
             {!isAdmin ? (
@@ -47,7 +49,7 @@ const DetailProduct = () => {
                 BUY NOW
               </Link>
             ) : (
-              <Link to={`/edit_product/${detailProduct._id}`} className="button-1">
+              <Link to={`/edit_product/${detailProduct._id}`} className="button">
                 EDIT
               </Link>
             )}
@@ -61,7 +63,7 @@ const DetailProduct = () => {
             product._id !== detailProduct._id && (
               <div>
                 <h2 className="text-3xl font-bold mt-8">Related products</h2>
-                <div className="products grid grid-cols-4">
+                <div className="grid grid-cols-4">
                   <ProductCard key={product._id} product={product} />
                 </div>
               </div>

@@ -4,7 +4,7 @@ import React from 'react'
 
 const ProductCard = ({ product, isAdmin, deleteProduct, handleCheck }) => {
   return (
-    <div className="product-item mt-6 border border-gray-200 mx-2">
+    <div className="mt-6 border border-gray-200 mx-2">
       {isAdmin && (
         <input
           className="w-4 h-4 my-4 ml-3"

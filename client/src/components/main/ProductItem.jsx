@@ -22,7 +22,7 @@ const ProductItem = ({ product }) => {
           <a href="/">{product.category}</a>
         </h3>
         <div className="flex flex-row justify-between mt-4">
-          <p className="text-sm self-center">&euro;{product.price}</p>{' '}
+          <p className="text-sm self-center">&euro;{product.price.toFixed(2)}</p>{' '}
           <button className="button" onClick={() => addCart(product)}>
             Add to cart
           </button>

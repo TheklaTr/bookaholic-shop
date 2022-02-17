@@ -64,8 +64,8 @@ const Login = () => {
               Login
             </button>
             <p className="link self-center">
+              Not a user?{' '}
               <Link to="/register">
-                Not a user?{' '}
                 <button type="submit" className="button-1">
                   Register
                 </button>

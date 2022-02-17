@@ -14,8 +14,8 @@ const SortBy = () => {
   }
 
   return (
-    <div className="filter_menu text-sm">
-      <div className="row">
+    <div className="text-sm">
+      <div>
         <span>Filter: </span>
         <select className="mt-4 outline-none" name="category" value={category} onChange={handleCategory}>
           <option value="">All Products</option>
@@ -27,7 +27,7 @@ const SortBy = () => {
         </select>
       </div>
 
-      <div className="row sort mt-4">
+      <div className="sort mt-4">
         <span>Sort: </span>
         <select value={sort} onChange={(e) => setSort(e.target.value)} className="outline-none">
           <option value="">Newest</option>

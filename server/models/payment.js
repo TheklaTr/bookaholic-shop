@@ -36,5 +36,11 @@ const paymentSchema = new mongoose.Schema(
   }
 )
 
+paymentSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    delete returnedObject.__v
+  },
+})
+
 const Payment = mongoose.model('Payment', paymentSchema)
 module.exports = Payment

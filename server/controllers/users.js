@@ -49,10 +49,10 @@ const userController = {
       const { email, password } = req.body
 
       const user = await User.findOne({ email })
-      if (!user) return res.status(400).json({ msg: 'User does not exist.' })
+      if (!user) return res.status(400).json({ msg: 'User does not exist!' })
 
       const isMatch = await bcrypt.compare(password, user.password)
-      if (!isMatch) return res.status(400).json({ msg: 'Incorrect password.' })
+      if (!isMatch) return res.status(400).json({ msg: 'Incorrect password!' })
 
       // If login success, create access token and refresh token
       const accessToken = createAccessToken({ id: user.id })
@@ -83,12 +83,12 @@ const userController = {
     try {
       const rfToken = req.cookies.refreshToken
       if (!rfToken) {
-        return res.status(400).json({ msg: 'Please login or Register' })
+        return res.status(400).json({ msg: 'Please Login or Register' })
       }
 
       jwt.verify(rfToken, process.env.REFRESH_TOKEN_SECRET, (error, user) => {
         if (error) {
-          return res.status(400).json({ msg: 'Please login or Register' })
+          return res.status(400).json({ msg: 'Please Login or Register' })
         }
         const accessToken = createAccessToken({ id: user.id })
 
