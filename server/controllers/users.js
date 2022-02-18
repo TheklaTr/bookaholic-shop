@@ -34,7 +34,7 @@ const userController = {
         path: '/user/refresh_token',
         secure: true, // only works on https,
         sameSite: 'strict',
-        maxAge: 7 * 24 * 60 * 60 * 1000, // 7d
+        maxAge: 5 * 24 * 60 * 60 * 1000, // 7d
       })
 
       // res.json(savedUser)
@@ -63,7 +63,7 @@ const userController = {
         path: '/user/refresh_token',
         secure: true, // only works on https
         sameSite: 'strict',
-        maxAge: 7 * 24 * 60 * 60 * 1000, // 7d
+        maxAge: 5 * 24 * 60 * 60 * 1000, // 7d
       })
 
       res.json({ accessToken })
@@ -134,7 +134,7 @@ const createAccessToken = (user) => {
 }
 
 const createRefreshToken = (user) => {
-  return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '7d' })
+  return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '5d' })
 }
 
 module.exports = userController

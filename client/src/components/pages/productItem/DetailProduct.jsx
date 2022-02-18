@@ -18,7 +18,6 @@ const DetailProduct = () => {
     }
   }, [params.id, products])
 
-  // console.log(detailProduct)
   if (detailProduct.length === 0) {
     return null
   }
@@ -56,19 +55,25 @@ const DetailProduct = () => {
           </p>
         </div>
       </div>
+
       <div>
-        {products.map(
-          (product) =>
-            product.category === detailProduct.category &&
-            product._id !== detailProduct._id && (
-              <div>
-                <h2 className="text-3xl font-bold mt-8">Related products</h2>
-                <div className="grid grid-cols-4">
+        {products.some(
+          (product) => product.category === detailProduct.category && product._id !== detailProduct._id
+        ) === true ? (
+          <h2 className="text-3xl font-bold mt-8">Related products</h2>
+        ) : null}
+
+        <div className="grid grid-cols-4">
+          {products.map(
+            (product) =>
+              product.category === detailProduct.category &&
+              product._id !== detailProduct._id && (
+                <div key={product._id}>
                   <ProductCard key={product._id} product={product} />
                 </div>
-              </div>
-            )
-        )}
+              )
+          )}
+        </div>
       </div>
     </div>
   )
