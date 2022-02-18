@@ -7,16 +7,16 @@ import ProductCard from './ProductCard'
 const DetailProduct = () => {
   const params = useParams()
   const state = useContext(GlobalState)
-  const [products] = state.useProducts.products
+  const [allBooks] = state.useProducts.allBooks
   const [isAdmin] = state.useUser.isAdmin
   const [detailProduct, setDetailProduct] = useState([])
   const addCart = state.useUser.addCart
 
   useEffect(() => {
     if (params.id) {
-      products.map((product) => product._id === params.id && setDetailProduct(product))
+      allBooks.map((product) => product._id === params.id && setDetailProduct(product))
     }
-  }, [params.id, products])
+  }, [params.id, allBooks])
 
   if (detailProduct.length === 0) {
     return null
@@ -57,14 +57,14 @@ const DetailProduct = () => {
       </div>
 
       <div>
-        {products.some(
+        {allBooks.some(
           (product) => product.category === detailProduct.category && product._id !== detailProduct._id
         ) === true ? (
           <h2 className="text-3xl font-bold mt-8">Related products</h2>
         ) : null}
 
         <div className="grid grid-cols-4">
-          {products.map(
+          {allBooks.map(
             (product) =>
               product.category === detailProduct.category &&
               product._id !== detailProduct._id && (
