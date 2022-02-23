@@ -7,6 +7,11 @@ const userController = {
   register: async (req, res) => {
     try {
       const { name, email, password } = req.body
+
+      // validate input to prevent noSQL injection
+      if (typeof name !== 'string' || typeof email !== 'string' || typeof password !== 'string')
+        return res.status(400).json({ msg: 'Please enter a string!' })
+
       const user = await User.findOne({ email })
 
       if (user) {
@@ -48,6 +53,10 @@ const userController = {
     try {
       const { email, password } = req.body
 
+      // validate input to prevent noSQL injection
+      if (typeof email !== 'string')
+        return res.status(400).json({ msg: 'Please enter a valid email address!' })
+
       const user = await User.findOne({ email })
       if (!user) return res.status(400).json({ msg: 'User does not exist!' })
 
@@ -63,7 +72,7 @@ const userController = {
         path: '/user/refresh_token',
         secure: true, // only works on https
         sameSite: 'strict',
-        maxAge: 5 * 24 * 60 * 60 * 1000, // 7d
+        maxAge: 5 * 24 * 60 * 60 * 1000, // 5d
       })
 
       res.json({ accessToken })

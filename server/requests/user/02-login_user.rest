@@ -2,6 +2,13 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-   "email": "admin01@gmail.com",
+   "email": { "$ne": "" },
    "password": "123456"
 }
+
+# {
+#    "email": "admin01@gmail.com",
+#    "password": "123456"
+# }
+# https://stackoverflow.com/questions/52707399/mitigating-mongodb-injection-attacks-with-mongoose
+# https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_sql_and_nosql_injection.html

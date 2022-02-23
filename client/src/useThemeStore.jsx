@@ -1,15 +1,19 @@
+import { devtools, persist } from 'zustand/middleware'
+
 import create from 'zustand'
-import { persist } from 'zustand/middleware'
 
 const useThemeStore = create(
-  persist(
-    (set, get) => ({
-      dark: false,
-      setDark: (state) => set({ dark: !state }),
-    }),
-    {
-      name: 'darkThem',
-    }
+  devtools(
+    persist(
+      (set, get) => ({
+        dark: false,
+        setDark: (state) => set({ dark: !state }),
+      }),
+      {
+        name: 'darkTheme',
+      }
+    ),
+    { anonymousActionType: 'DarkModeTheme' }
   )
 )
 

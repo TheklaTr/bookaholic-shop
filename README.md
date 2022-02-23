@@ -41,6 +41,8 @@
 
 ### Connect to PayPal
 
+- Create `.env.local` file in server
+
 - Add paypal clientID sandbox in `.env.local`
 
 ```

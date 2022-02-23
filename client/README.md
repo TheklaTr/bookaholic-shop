@@ -83,59 +83,58 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 │   └── logo.png
 ├── src/
 │   ├── components/
-│   │  	├── footer/
-│   │  	│     └── Footer.jsx
-│   │	├── header/
-│   │   │   ├── img
-│   │	│   │     └── logo.png
-│   │	│ 	└── Header.jsx
-│   │	├── main/
-│   │   │  	├── img
-│   │	│   │  	  └── banner.png
-│   │   │ 	├── Banner.jsx
-│   │   │ 	├── ProductItem.jsx
-│   │	│ 	└── ProductList.jsx
-│   │   ├── pages/
-│   │   │   ├── authorization/
-│   │	│ 	│	  	├── Login.jsx
-│   │	│ 	│   	└── Register.jsx
-│   │	│ 	├── cart/
-│   │	│ 	│  	  	├── Cart.jsx
-│   │	│ 	│     	└── PaypalButton.jsx
-│   │	│   ├── categories/
-│   │	│ 	│     	└── Categories.jsx
-│   │   │ 	├── homepage/
-│   │	│ 	│   	├── img
-│   │	│ 	│     	│  	├── children.png
-│   │	│ 	│     	│	└── science.png
-│   │	│ 	│   	└── Homepage.jsx
-│   │	│ 	├── orders/
-│   │	│ 	│ 	  	├── OrderDetails.jsx
-│   │	│ 	│ 	  	└── OrderHistory.jsx
-│   │   │ 	├── productItem/
-│   │	│ 	│   	├── BtnRender.jsx
-│   │	│ 	│     	├── CreateProduct.jsx
-│   │	│ 	│   	├── DetailProduct.jsx
-│   │	│ 	│ 	  	└── ProductCard.jsx
-│   │   │ 	├── productList/
-│   │	│ 	│   	├── LoadMore.jsx
-│   │	│ 	│ 	  	├── ProductList.jsx
-│   │	│	│  	  	├── Search.jsx
-│   │	│ 	│     	└── SortBy.jsx
-│   │	│	├── utils/
-│   │	│ 	│	  	├── Loading.jsx
-│   │	│ 	│		└── NotFound.jsx
-│   │   │  	└── Layout.jsx
+│   │	  ├── footer/
+│   │  	  │   	└── Footer.jsx
+│   │	  ├── header/
+│   │	  │ 	└── Header.jsx
+│   │	  ├── main/
+│   │     │  	├── img
+│   │	  │     │     └── banner.png
+│   │     │ 	├── Banner.jsx
+│   │     │ 	├── ProductItem.jsx
+│   │	  │ 	└── ProductList.jsx
+│   │     ├── pages/
+│   │     │     ├── authorization/
+│   │	  │ 	│	  ├── Login.jsx
+│   │	  │ 	│     └── Register.jsx
+│   │	  │ 	├── cart/
+│   │	  │ 	│  	  ├── Cart.jsx
+│   │	  │ 	│     └── PaypalButton.jsx
+│   │	  │   	├── categories/
+│   │	  │ 	│     └── Categories.jsx
+│   │	  │ 	├── homepage/
+│   │	  │ 	│     ├── img
+│   │	  │ 	│     │  	├── children.png
+│   │	  │ 	│     │		└── science.png
+│   │	  │ 	│     └── Homepage.jsx
+│   │	  │ 	├── orders/
+│   │	  │ 	│ 	  ├── OrderDetails.jsx
+│   │	  │ 	│ 	  └── OrderHistory.jsx
+│   │     │ 	├── productItem/
+│   │	  │ 	│  	  ├── BtnRender.jsx
+│   │	  │ 	│     ├── CreateProduct.jsx
+│   │	  │ 	│     ├── DetailProduct.jsx
+│   │	  │ 	│ 	  └── ProductCard.jsx
+│   │     │ 	├── productList/
+│   │	  │ 	│     ├── LoadMore.jsx
+│   │	  │ 	│ 	  ├── ProductList.jsx
+│   │	  │	  	│  	  ├── Search.jsx
+│   │	  │   	│     └── SortBy.jsx
+│   │	  │	  	├── utils/
+│   │	  │ 	│	  ├── Loading.jsx
+│   │	  │ 	│     └── NotFound.jsx
+│   │     │  	└── Layout.jsx
 │   ├── hooks/
 │   │  	├── useCategories.js
 │   │  	├── useProducts.js
 │   │  	└── useUser.js
 │   ├── styles/
-│   │   	├── fonts.scss
-│   │   	└── global.scss
+│   │   ├── fonts.scss
+│   │   └── global.scss
 │   ├── App.jsx
-│   ├── GlobalState.js
-│   └── index.js
+│   ├── GlobalState.jsx
+│   ├── index.js
+│   └── useThemeStore.jsx
 ├── .gitignore
 ├── .prettierignore
 ├── .prettierrc.js
@@ -147,6 +146,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ```
 
+
 ```
 .
 ├── build/
@@ -155,9 +155,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 │   ├── payment.js
 │   ├── products.js
 │   └── users.js
-├── middlware/
+├── middleware/
 │   ├── adminAuth.js
-│   └── auth.js
+│   ├── auth.js
+│   └── errorHandler.js
 ├── models/
 │   ├── category.js
 │   ├── payment.js
@@ -167,10 +168,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ├── requests/
 ├── routes/
 │   ├── categoryRouter.js
+│   ├── imageRouter.js
 │   ├── paymentRouter.js
 │   ├── productRouter.js
-│   ├── upload.js
 │   └── usersRouter.js
+├── routes/
+│   ├── config.js
+│   └── logger.js
 ├── tmp/
 ├── .env
 ├── .eslintignore
@@ -178,8 +182,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ├── .gitignore
 ├── .prettierignore
 ├── .prettierrc.js
+├── app.js
+├── index.js
 ├── package-lock.json
 ├── package.json
-├── Procfile
-└── server.js
-``` -->
+└── Procfile
+```
+-->
