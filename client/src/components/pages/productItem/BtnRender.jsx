@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import { Link } from 'react-router-dom'
 
 const BtnRender = ({ product, deleteProduct }) => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [isAdmin] = state.useUser.isAdmin
   const addCart = state.useUser.addCart
 

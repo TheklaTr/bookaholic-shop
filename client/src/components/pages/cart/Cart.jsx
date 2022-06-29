@@ -1,13 +1,13 @@
 import { AiOutlineDelete, AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
 import React, { useContext, useEffect, useState } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import { Link } from 'react-router-dom'
 import PaypalButton from './PaypalButton'
 import axios from 'axios'
 
 const Cart = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [cart, setCart] = state.useUser.cart
   const [token] = state.token
   const [total, setTotal] = useState(0)
@@ -76,7 +76,7 @@ const Cart = () => {
         <div className="w-full">
           {cart.map((product) => (
             <div
-              className="detail cart flex flex-row text-sm justify-between gap-4 mb-8 border border-gray-400 p-4"
+              className="dark:bg-slate-700 dark:border-gray-600 flex flex-row text-sm justify-between gap-4 mb-8 border border-gray-400 p-4"
               key={product._id}
             >
               <img src={product.images.url} alt={product.title} width={100} />

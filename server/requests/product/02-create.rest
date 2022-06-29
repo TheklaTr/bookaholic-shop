@@ -1,6 +1,6 @@
 POST http://localhost:3003/api/products
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWMxY2FmN2MyODNmMGM1MDM5M2RkYyIsImlhdCI6MTY0NDcyMDgwNywiZXhwIjoxNjQ0ODA3MjA3fQ.NcuKUm6IKFzjEibt5KjsMdNl72U50I4l6z0EvLfvhf0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMGU1MjUyNTAwZGU2MmVhY2VmOGY0ZCIsImlhdCI6MTY1MjM2MTcyMiwiZXhwIjoxNjUyNDQ4MTIyfQ.IxTcu4EFVZ9-p_IEhfI7wVndDUI6UZc5XHgT9PWELMc
 
 {
     "product_id": "pr001",

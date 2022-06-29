@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import LoadMore from './LoadMore'
 import Loading from '../utils/Loading'
 import ProductCard from '../productItem/ProductCard'
@@ -9,7 +9,7 @@ import SortBy from './SortBy'
 import axios from 'axios'
 
 const Products = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [products, setProducts] = state.useProducts.products
   const [isAdmin] = state.useUser.isAdmin
   const [token] = state.token
@@ -51,12 +51,16 @@ const Products = () => {
 
   const deleteAll = () => {
     if (window.confirm('Are you sure you want to delete all products?')) {
-      products.map((product) => product.checked && deleteProduct(product._id, product.images.public_id))
+      products.map(
+        (product) =>
+          product.checked &&
+          deleteProduct(product._id, product.images.public_id)
+      )
     }
   }
 
   if (loading) return <Loading />
-  console.log(products.length)
+  // console.log(products.length)
 
   return (
     <div className="container">

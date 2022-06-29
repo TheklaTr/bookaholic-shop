@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const OrderHistory = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [history, setHistory] = state.useUser.history
   const [isAdmin] = state.useUser.isAdmin
   const [token] = state.token

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 
 // import { BsSearch } from 'react-icons/bs'
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import InputWithDebouncing from 'react-input-with-debouncing'
 
 const Search = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [search, setSearch] = state.useProducts.search
 
   return (
@@ -17,15 +17,8 @@ const Search = () => {
         minLength={1}
         debounceTimeout={1000}
         onChange={(e) => setSearch(e.target.value.toLowerCase())}
-        className="border border-gray-400 h-12 w-full px-4 text-gray-700 outline-none outline hover:outline-offset-2  hover:border-red-500"
+        className="border border-gray-400 h-12 w-full px-4 text-gray-700 outline-none outline hover:outline-offset-2 hover:border-red-500 dark:bg-gray-100"
       />
-
-      {/* <button
-        disabled
-        className="bg-white text-gray-500 border border-gray-400 text-xl px-6 h-12 "
-      >
-        <BsSearch />
-      </button> */}
     </div>
   )
 }

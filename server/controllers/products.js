@@ -92,7 +92,7 @@ const productController = {
   deleteProduct: async (req, res) => {
     try {
       const deletedProduct = await Product.findByIdAndDelete(req.params.id)
-      res.json({ msg: `Deleted Product ${deletedProduct}` })
+      return res.status(204).json({ msg: `Deleted Product ${deletedProduct.title}` })
     } catch (error) {
       return res.status(500).json({ msg: error.message })
     }

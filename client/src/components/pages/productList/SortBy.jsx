@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 
 const SortBy = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [categories] = state.useCategories.categories
 
   const [category, setCategory] = state.useProducts.category

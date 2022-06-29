@@ -5,7 +5,7 @@ import Cart from './cart/Cart'
 import Categories from './categories/Categories'
 import CreateProduct from './productItem/CreateProduct'
 import DetailProduct from './productItem/DetailProduct'
-import { GlobalState } from '../../GlobalState'
+import { GlobalContext } from '../../GlobalContext'
 import Homepage from './homepage/Homepage'
 import Login from './authorization/Login'
 import NotFound from './utils/NotFound'
@@ -15,7 +15,7 @@ import ProductList from './productList/ProductList'
 import Register from './authorization/Register'
 
 const Pages = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [isLogged] = state.useUser.isLogged
   const [isAdmin] = state.useUser.isAdmin
 

@@ -2,11 +2,11 @@ import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
 import { MdOutlineCreateNewFolder, MdOutlineSystemUpdateAlt } from 'react-icons/md'
 import React, { useContext, useState } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import axios from 'axios'
 
 const Categories = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [categories] = state.useCategories.categories
   const [category, setCategory] = useState('')
   const [token] = state.token
@@ -72,7 +72,7 @@ const Categories = () => {
             value={category}
             required
             onChange={(e) => setCategory(e.target.value)}
-            className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
+            className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700 dark:bg-gray-100"
           />
           <button type="submit" className="text-2xl ml-4 self-center">
             {onEdit ? <MdOutlineSystemUpdateAlt /> : <MdOutlineCreateNewFolder />}

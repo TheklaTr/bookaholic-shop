@@ -1,5 +1,4 @@
 const config = require('./utils/config')
-require('dotenv').config()
 const express = require('express')
 const logger = require('./utils/logger')
 const errorHandler = require('./middleware/errorHandler')

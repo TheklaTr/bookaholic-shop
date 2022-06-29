@@ -152,7 +152,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ├── build/
 ├── controllers/
 │   ├── categories.js
-│   ├── payment.js
+│   ├── payments.js
 │   ├── products.js
 │   └── users.js
 ├── middleware/
@@ -172,7 +172,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 │   ├── paymentRouter.js
 │   ├── productRouter.js
 │   └── usersRouter.js
-├── routes/
+├── utils/
 │   ├── config.js
 │   └── logger.js
 ├── tmp/

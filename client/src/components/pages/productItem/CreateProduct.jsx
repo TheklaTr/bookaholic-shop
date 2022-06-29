@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import Loading from '../utils/Loading'
 import { TiDelete } from 'react-icons/ti'
 import axios from 'axios'
@@ -17,7 +17,7 @@ const initialState = {
 }
 
 const CreateProduct = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [product, setProduct] = useState(initialState)
   const [categories] = state.useCategories.categories
   const [images, setImages] = useState(false)
@@ -159,7 +159,7 @@ const CreateProduct = () => {
               value={product.product_id}
               onChange={handleChangeInput}
               disabled={onEdit}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700 dark:bg-gray-100"
             />
           </div>
           <div className="flex flex-row gap-4 justify-between mt-4">
@@ -173,7 +173,7 @@ const CreateProduct = () => {
               required
               value={product.title}
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700 dark:bg-gray-100"
             />
           </div>
 
@@ -188,7 +188,7 @@ const CreateProduct = () => {
               required
               value={product.price}
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700 dark:bg-gray-100"
             />
           </div>
 
@@ -204,7 +204,7 @@ const CreateProduct = () => {
               value={product.description}
               rows="5"
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700 dark:bg-gray-100"
             />
           </div>
 
@@ -220,7 +220,7 @@ const CreateProduct = () => {
               value={product.content}
               rows="7"
               onChange={handleChangeInput}
-              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700"
+              className="border border-gray-500 outline-none p-2 ml-4 w-full dark:text-gray-700 dark:bg-gray-100"
             />
           </div>
 

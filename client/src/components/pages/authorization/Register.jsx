@@ -16,7 +16,7 @@ const Register = () => {
     try {
       await axios.post('/user/register', { ...user })
 
-      localStorage.setItem('firstLogin', true)
+      localStorage.setItem('userLogin', true)
 
       window.location.href = '/'
     } catch (err) {

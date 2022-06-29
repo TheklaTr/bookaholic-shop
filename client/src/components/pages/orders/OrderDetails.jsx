@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import { useParams } from 'react-router-dom'
 
 const OrderDetails = () => {
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [history] = state.useUser.history
   const [orderDetails, setOrderDetails] = useState([])
 
@@ -23,7 +23,7 @@ const OrderDetails = () => {
       <h2 className="text-2xl font-bold">User Information</h2>
       <table className="w-full mt-4 ">
         <thead>
-          <tr className="bg-gray-700 text-white border border-gray-700 dark:bg-gray-300 dark:text-gray-700">
+          <tr className="bg-gray-700 text-white border border-gray-700 dark:bg-gray-300 dark:text-gray-800">
             <th className="p-2 text-center">Name</th>
             <th className="p-2 text-center">Address</th>
             <th className="p-2 text-center">Postal Code</th>
@@ -45,7 +45,7 @@ const OrderDetails = () => {
       <h2 className="text-2xl font-bold mt-8">Items Purchased</h2>
       <table className="w-full mt-4">
         <thead>
-          <tr className="bg-gray-700 text-white border border-gray-700 dark:bg-gray-300 dark:text-gray-700">
+          <tr className="bg-gray-700 text-white border border-gray-700 dark:bg-gray-300 dark:text-gray-800">
             <th className="p-2 text-center"></th>
             <th className="p-2 text-center">Products</th>
             <th className="p-2 text-center">Quantity</th>

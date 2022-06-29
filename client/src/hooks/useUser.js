@@ -30,14 +30,16 @@ const useUser = (token) => {
 
   const addCart = async (product) => {
     if (!isLogged) return alert('Please login to continue buying')
-
     const check = cart.every((item) => item._id !== product._id)
 
     if (check) {
       setCart([...cart, { ...product, quantity: 1 }])
 
-      const config = { headers: { Authorization: token } }
-      await axios.patch('/user/add_cart', { cart: [...cart, { ...product, quantity: 1 }] }, config)
+      await axios.patch(
+        '/user/add_cart',
+        { cart: [...cart, { ...product, quantity: 1 }] },
+        { headers: { Authorization: token } }
+      )
     } else {
       alert('This product has been added to cart.')
     }

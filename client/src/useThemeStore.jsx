@@ -9,9 +9,7 @@ const useThemeStore = create(
         dark: false,
         setDark: (state) => set({ dark: !state }),
       }),
-      {
-        name: 'darkTheme',
-      }
+      { name: 'darkTheme' }
     ),
     { anonymousActionType: 'DarkModeTheme' }
   )

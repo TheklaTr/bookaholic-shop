@@ -1,13 +1,13 @@
-import Banner from '../../main/Banner'
+import Banner from './Banner'
 import Children from './img/children.jpg'
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import { Link } from 'react-router-dom'
-import ProductList from '../../main/ProductList'
+import ProductList from './ProductList'
 import React from 'react'
 import Science from './img/science.png'
 
 const Homepage = () => {
-  const state = React.useContext(GlobalState)
+  const state = React.useContext(GlobalContext)
   const [isLogged] = state.useUser.isLogged
 
   return (

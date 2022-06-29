@@ -1,12 +1,12 @@
 import { Link, useParams } from 'react-router-dom'
 import React, { useContext, useEffect, useState } from 'react'
 
-import { GlobalState } from '../../../GlobalState'
+import { GlobalContext } from '../../../GlobalContext'
 import ProductCard from './ProductCard'
 
 const DetailProduct = () => {
   const params = useParams()
-  const state = useContext(GlobalState)
+  const state = useContext(GlobalContext)
   const [allBooks] = state.useProducts.allBooks
   const [isAdmin] = state.useUser.isAdmin
   const [detailProduct, setDetailProduct] = useState([])
